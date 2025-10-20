@@ -1276,6 +1276,8 @@
 
     .body-wrapper {
         flex-direction: column;
+        row-gap: 1rem;
+        overflow: auto;
     }
 
     .title-bar {
