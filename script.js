@@ -1,20 +1,21 @@
 document.addEventListener('DOMContentLoaded', () => {
     const menuButton = document.querySelector('.menu-button');
     const mobileNav = document.querySelector('.mobile-nav');
-    const closeButton = document.querySelector('.close-button');
     const contentWrapper = document.querySelector('.content-wrapper');
     let isMenuOpen = false;
 
     const toggleMenu = () => {
         isMenuOpen = !isMenuOpen;
         mobileNav.classList.toggle('show', isMenuOpen);
+        const overlay = contentWrapper.querySelector('.overlay');
         if (isMenuOpen) {
-            const overlay = document.createElement('div');
-            overlay.classList.add('overlay');
-            contentWrapper.appendChild(overlay);
-            overlay.addEventListener('click', toggleMenu);
+            if (!overlay) {
+                const newOverlay = document.createElement('div');
+                newOverlay.classList.add('overlay');
+                contentWrapper.appendChild(newOverlay);
+                newOverlay.addEventListener('click', toggleMenu);
+            }
         } else {
-            const overlay = contentWrapper.querySelector('.overlay');
             if (overlay) {
                 contentWrapper.removeChild(overlay);
             }
@@ -23,9 +24,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (menuButton) {
         menuButton.addEventListener('click', toggleMenu);
-    }
-
-    if (closeButton) {
-        closeButton.addEventListener('click', toggleMenu);
     }
 });
