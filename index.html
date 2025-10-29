@@ -244,11 +244,24 @@
                 </form>
 
                 <div class="filter-btn-container">
-                    <div class="filter-btn">
+
+                    <div class="dd-filter-btn ">
+                            <!-- <label for="role" class="filter-label">Payment Status</label> -->
+                            <select id="role" name="role" required>
+                                <option value="" disabled selected>All Filter</option>
+                                <option value="student">Excellent</option>
+                                <option value="teacher">Average</option>
+                                <option value="parent">Passed</option>
+                                <option value="other" class="canceled">Failed</option>
+                            </select>
+                            <span class="material-symbols-outlined filter-chevron">keyboard_arrow_down</span>
+                    </div>
+
+                    <!-- <div class="filter-btn">
                         <span class="material-symbols-outlined">filter_list</span>
                         <p>Filter Results</p>
                         <span class="material-symbols-outlined">stat_minus_1</span>
-                    </div>
+                    </div> -->
 
                     <div class="filter-btn">
                         <span class="material-symbols-outlined">publish</span>

@@ -25,4 +25,31 @@ document.addEventListener('DOMContentLoaded', () => {
     if (menuButton) {
         menuButton.addEventListener('click', toggleMenu);
     }
+
+    const selectAllCheckbox = document.querySelector('.table-title .title-check');
+    const rowCheckboxes = document.querySelectorAll('.table-wrapper .title-check');
+
+    selectAllCheckbox.addEventListener('click', () => {
+        const isChecked = selectAllCheckbox.textContent.trim() === 'check_box';
+        rowCheckboxes.forEach(checkbox => {
+            checkbox.textContent = isChecked ? 'check_box_outline_blank' : 'check_box';
+            checkbox.classList.toggle('checked-icon', !isChecked);
+            checkbox.closest('.row').classList.toggle('selected-row', !isChecked);
+        });
+        selectAllCheckbox.textContent = isChecked ? 'check_box_outline_blank' : 'check_box';
+        selectAllCheckbox.classList.toggle('checked-icon', !isChecked);
+    });
+
+    rowCheckboxes.forEach(checkbox => {
+        checkbox.addEventListener('click', () => {
+            const isChecked = checkbox.textContent.trim() === 'check_box';
+            checkbox.textContent = isChecked ? 'check_box_outline_blank' : 'check_box';
+            checkbox.classList.toggle('checked-icon', !isChecked);
+            checkbox.closest('.row').classList.toggle('selected-row', !isChecked);
+
+            const allChecked = Array.from(rowCheckboxes).every(cb => cb.textContent.trim() === 'check_box');
+            selectAllCheckbox.textContent = allChecked ? 'check_box' : 'check_box_outline_blank';
+            selectAllCheckbox.classList.toggle('checked-icon', allChecked);
+        });
+    });
 });
