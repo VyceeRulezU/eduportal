@@ -52,4 +52,21 @@ document.addEventListener('DOMContentLoaded', () => {
             selectAllCheckbox.classList.toggle('checked-icon', allChecked);
         });
     });
+
+    const exportCsvBtn = document.getElementById('csv-btn');
+    const rptBtn = document.getElementById('rpt-btn');
+    const customAlert = document.getElementById('custom-alert');
+    const closeAlertBtn = document.getElementById('close-alert-btn');
+
+    exportCsvBtn.addEventListener('click', () => {
+        customAlert.classList.add('show');
+    });
+
+    rptBtn.addEventListener('click', () => {
+        customAlert.classList.add('show');
+    });
+
+    closeAlertBtn.addEventListener('click', () => {
+        customAlert.classList.remove('show');
+    });
 });

@@ -1124,3 +1124,43 @@
 .checked-icon {
     color: #61B763;
 }
+
+.custom-alert {
+    width: 380px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1002;
+    display: none;
+}
+
+
+.custom-alert .alert-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 1rem;
+}
+
+.alert-content p{
+    text-align: center;
+}
+
+.alert-content button{
+    width: 100%;
+    padding: 1rem;
+    background-color: #61B763;
+    color: white;
+    border: none;
+    outline: none;
+    border-radius: 0.8rem;
+}
+
+.custom-alert.show {
+    display: block;
+}

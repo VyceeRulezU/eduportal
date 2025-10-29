@@ -263,12 +263,12 @@
                         <span class="material-symbols-outlined">stat_minus_1</span>
                     </div> -->
 
-                    <div class="filter-btn">
+                    <div class="filter-btn" id="csv-btn">
                         <span class="material-symbols-outlined">publish</span>
                         <p>Export CSV</p>
                     </div>
 
-                    <div class="filter-btn">
+                    <div class="filter-btn" id="rpt-btn">
                         <span class="material-symbols-outlined">download</span>
                         <p>Download Report</p>
                     </div>
@@ -787,6 +787,11 @@
     <!-- External Script -->
      <script src="script.js"></script>
 
-
+    <div id="custom-alert" class="custom-alert">
+        <div class="alert-content">
+            <p>CSV file downloaded Successfully!</p>
+            <button id="close-alert-btn">Close</button>
+        </div>
+    </div>
 </body>
 </html>
